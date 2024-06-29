@@ -1,0 +1,192 @@
+{
+    "info": {
+        "_postman_id": "cb3d5d90-5585-4e95-9a32-3e5a2b1a6f5e",
+        "name": "Encryption API",
+        "description": "Postman collection for Encryption API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"login\": \"testuser\",\n    \"secret\": \"test123\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/users",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "users"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Users",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/users",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "users"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Encrypt Data",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"user_id\": 1,\n    \"method_id\": 1,\n    \"data_in\": \"plaintext\",\n    \"params\": {\"key\": \"secretkey\"}\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/encrypt",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "encrypt"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Decrypt Data",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"session_id\": 1,\n    \"secret\": \"test123\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/decrypt",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "decrypt"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Session Details",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:5000/sessions/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "sessions",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Session",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"secret\": \"test123\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/sessions/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "sessions",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Crack Cipher",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"session_id\": 1\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/crack",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "crack"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
+
